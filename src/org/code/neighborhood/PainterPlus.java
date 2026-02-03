@@ -18,7 +18,7 @@ public class PainterPlus extends Painter {
       if (canMove()) move();
     }
     turnRight();
-    for(int i = 0; i < x; i++) {
+    for(int i = 0; i < y; i++) {
       if (canMove()) move();
     }
 
