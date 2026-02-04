@@ -78,9 +78,15 @@ public class PainterPlus extends Painter {
       turnRight();
     }
   }
+
+  // This method moves the painter back to (0, 0). 
+  public void moveToOrigin() {
+    // Need to make sure the painter is facing west because the painter be moving
+    // backwards in the x-axis.
+    faceWest();
     // Move till the second pixel in the row is reached.
     for(int x = getX(); x >= 1; x--) {
-      move();
+      if (canMove()) move();
     }
 
     // Make the painter face north.
@@ -88,7 +94,7 @@ public class PainterPlus extends Painter {
     
     // Move till the second pixel of the column is reached.
     for(int y = getY(); y >= 1; y--) {
-      move();
+      if (canMove()) move();
     }
     // Make the painter face east.
     faceEast();
@@ -96,9 +102,6 @@ public class PainterPlus extends Painter {
 
   // Move the painter to a grid coordinate. 
   public void moveTo(int x, int y) {
-    // Need to make sure the painter before moving anywhere.
-    faceEast();
-    
     // If the painter is already on the desired grid coordinate, exit early.
     if(x == getX() && y == getY()) {
       return;
