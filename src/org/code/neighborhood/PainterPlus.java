@@ -58,14 +58,6 @@ public class PainterPlus extends Painter {
     // Make the painter face north.
     turnRight();
     
-    // Move till the second last pixel of the column is reached.
-    /* for(int y = getY(); y < gridCols - 1; y++) {
-      move();
-    }
-    // Make the painter turn by 180 degrees.
-    turnLeft();
-    turnLeft(); */
-    
     // Move till the second pixel of the column is reached.
     for(int y = getY(); y >= 1; y--) {
       move();
