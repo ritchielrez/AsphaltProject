@@ -9,3 +9,7 @@ Your goal is to create asphalt art to revitalize The Neighborhood and bring the 
 This project is meant to be run on the neighbourhood environment provided by [code.org](https://code.org/en-US).
 I normally do not use Java, but this project was assignmed to me by my high school coding teacher. Therefore, I am just posting
 the code here as a backup option.
+
+### Screenshot
+This is the screenshot of the resulting rendered logo.  
+![Screenshot of the result after running the code](./Screenshot.jpeg)
