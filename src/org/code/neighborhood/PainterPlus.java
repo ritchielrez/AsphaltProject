@@ -19,8 +19,7 @@ public class PainterPlus extends Painter {
     turnLeft();
   }
 
-  // Ensure the painter is facing east. Most methods in this class 
-  // require the painter to be facing east.
+  // Ensure the painter is facing east.
   public void faceEast() {
     // If it is already facing east exit no need to do anything.
     if (isFacingEast()) {
@@ -35,21 +34,50 @@ public class PainterPlus extends Painter {
     }
   }
 
-  // This method moves the painter back to (0, 0). Need to make sure the painter 
-  // is facing east before calling this method.
-  public void moveToOrigin() {
-    // Need to make sure the painter before moving anywhere.
-    faceEast();
-    
-    // Move till the second last pixel in the row is reached.
-    for(int x = getX(); x < gridRows - 1; x++) {
-      move();
+  // Similar to `faceNorth()`, but makes the painter face north.
+  public void faceNorth() {
+    // If it is already facing north exit no need to do anything.
+    if (isFacingNorth()) {
+      return;
+    } else if(isFacingSouth()) {
+      turnLeft();
+      turnLeft();
+    } else if(isFacingEast()) {
+      turnRight();
+    } else if(isFacingWest()) {
+      turnLeft();
     }
+  }
 
-    // Make the painter turn by 180 degrees.
-    turnLeft();
-    turnLeft();
-    
+  // Similar to `faceSouth()`, but makes the painter face south.
+  public void faceSouth() {
+    // If it is already facing north exit no need to do anything.
+    if (isFacingSouth()) {
+      return;
+    } else if(isFacingNorth()) {
+      turnLeft();
+      turnLeft();
+    } else if(isFacingEast()) {
+      turnLeft();
+    } else if(isFacingWest()) {
+      turnRight();
+    }
+  }
+
+  // Similar to `faceWest()`, but makes the painter face west.
+  public void faceWest() {
+    // If it is already facing west exit no need to do anything.
+    if (isFacingWest()) {
+      return;
+    } else if(isFacingEast()) {
+      turnLeft();
+      turnLeft();
+    } else if(isFacingNorth()) {
+      turnLeft();
+    } else if(isFacingSouth()) {
+      turnRight();
+    }
+  }
     // Move till the second pixel in the row is reached.
     for(int x = getX(); x >= 1; x--) {
       move();
